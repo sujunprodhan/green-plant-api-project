@@ -77,7 +77,7 @@ document.getElementById('card_container').addEventListener('click', (e) => {
     let object = {
       name, price, id, quintity: 1
     }
-    alert(`${name} Add to cart 🛒`)
+    alert(`${name} Add to cart 🛍️`)
     addToCard.push(object)
     showCart(addToCard)
   }
