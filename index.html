@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- tailwind and daysi ui cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- css link -->
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="bg-[#15803d] py-5">
+      <div class="md:w-[1140px] w-full mx-auto">
+        <div class="flex flex-col md:flex-row gap-3 justify-between items-center">
+          <h1 class="text-2xl font-bold text-[#fff]">Green Earth</h1>
+          <div>
+            <ul class="flex text-xl text-[#fff] space-x-10">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Plant & Tree</a></li>
+            </ul>
+          </div>
+          <button class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d]">Plant & Tree</button>
+        </div>
+      </div>
+    </nav>
+    <!-- banner section -->
+    <section class="flex justify-between bg-[#CFF0DC]">
+      <div class="hidden md:block">
+        <img src="./assets/hero-leaf1.png" alt="">
+      </div>
+      <div class="flex items-center mx-auto justify-center md:mt-0 mt-10">
+        <div class="text-center">
+          <h1 class="md:text-[2.5rem] text-[2.25rem] text font-bold">Plant a Tree, Grow a Future</h1>
+          <p class="text-[#5c5c57] md:w-[583px] w-[400px]">Join our mission to plant 1 million trees and make the Earth
+            greener for
+            future
+            generations.</p>
+          <button class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d] md:mt-5 mt-5 md:mb-5 mb-5">Get
+            Involved</button>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <img src="./assets/hero-leaf2.png" alt="">
+      </div>
+    </section>
+  </header>
+
+
+  <!-- main section -->
+  <main>
+    <section>
+      <h1 class="flex justify-center items-center py-15 text-[2rem] font-bold">Choose Your Trees</h1>
+      <div class="w-11/12 mx-auto grid grid-cols-12 gap-3">
+        <aside class="catagory_item col-span-2 p-2">
+          <h1 class="text-[1.25rem] font-bold p-2">Categories</h1>
+          <h2 class="bg-[#15803d] text-[#fff] p-2 rounded-md">All Categories</h2>
+          <ul id="categoris_container" class="space-y-2 mt-5">
+
+          </ul>
+        </aside>
+        <div class="bg-[#fff] col-span-8">
+          <h1>tree</h1>
+        </div>
+        <aside class="card_box bg-[#fff] col-span-2">
+          <h1>Your Cart</h1>
+        </aside>
+      </div>
+
+    </section>
+
+
+
+
+
+
+  </main>
+
+
+  <script src="./green.js"></script>
+</body>
+
+</html>
