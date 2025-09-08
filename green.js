@@ -55,15 +55,15 @@ const showCard = (cata) => {
   cata.forEach(iteam => {
     const divItem = document.createElement('div')
     divItem.innerHTML = `       
-           <div class="space-y-4 ">
+           <div class="space-y-4 bg-[#fff] p-2 rounded-md ">
               <img src="${iteam.image}" alt="" class="rounded-md h-[250px] object-cover w-full bg-gray-200 p-2">
               <h1 onclick="openModal(${iteam.id})" class="font-bold text-[1.25rem]">${iteam.name}</h1>
-              <p>${iteam.description.slice(0, 90)}</p>
+              <p>${iteam.description.slice(0, 80)}</p>
               <div class="flex justify-between">
                 <button class="bg-[#DCFCE7] px-5 py-2 rounded-full">Fruit Tree</button>
                 <button class="font-semibold ">৳<span>${iteam.price}</span></button>
               </div>
-              <button id="${iteam.id}" class="bg-[#15803d] w-full rounded-full px-5 py-2 text-[#fff] hover:bg-[#fff] border-1 border-[#15803d] hover:text-[#15803d] duration-800 cursor-pointer "> Add To Cart </button>
+              <button id="${iteam.id}" class="bg-[#15803d] w-full mb-2 rounded-full px-5 py-2 text-[#fff] hover:bg-[#fff] border-1 border-[#15803d] hover:text-[#15803d] duration-800 cursor-pointer "> Add To Cart </button>
             </div>     
     `
     cardContainer.appendChild(divItem)
@@ -79,13 +79,13 @@ const openModal = (id) => {
     .then(res => res.json())
     .then(data => {
       modal.innerHTML += `
-      <h2>${data.plants.name}</h2>
+      <h2 class="text-[1.25rem] font-bold">${data.plants.name}</h2>
           <img src="${data.plants.image}" alt="" class="rounded-md h-[250px] object-cover w-full bg-gray-200 p-2">
-          <div>
-            <h2>Category</h2>
-            <p>${data.plants.category}</p>
+          <div class="flex">
+            <h2 class="font-semibold">Category:</h2>
+            <p class="ml-2">${data.plants.category}</p>
           </div>
-          <p><span>Price :</span>${data.plants.price}</p>
+          <p><span class="font-semibold">Price : </span>${data.plants.price}</p>
           <p><span>Discription</span>${data.plants.description}</p>
       `
     }
