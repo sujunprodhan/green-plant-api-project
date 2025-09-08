@@ -37,7 +37,7 @@ console.log(z); // 50
 ## 2. What is the difference between `map()`, `forEach()`, and `filter()`?
 
 **Answer:**  
-The `forEach()`, `map()`, and `filter()` methods in JavaScript are used to iterate over arrays, but they serve different purposes.  
+The forEach(), map(), and filter() methods in JavaScript are used to iterate over arrays, but they serve different purposes.  
 
 - **forEach()** → Iterates over array elements, executing a specified function once for each element. Does not return a new array.  
 - **map()** → Creates a new array by applying a function to each element of the original array. Returns a transformed array.  
@@ -104,15 +104,15 @@ const age = 25;
 console.log("My name is " + name + " and I am " + age + " years old.");
 
 // Template literal
-console.log(`My name is ${name} and I am ${age} years old.`);
+console.log(My name is ${name} and I am ${age} years old.);
+
 
 // Multi-line template literal
-const multiLine = `
+const multiLine = ``
 This is a string
 that spans multiple lines
 using template literals.
 `;
-
 console.log(multiLine);
 
 ```
