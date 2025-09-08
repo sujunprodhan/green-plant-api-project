@@ -28,7 +28,9 @@
               <li><a href="#">Plant & Tree</a></li>
             </ul>
           </div>
-          <button class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d]">Plant & Tree</button>
+          <button
+            class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d] hover:bg-[#f9ca0b] hover:text-[#fff] duration-700 cursor-pointer">Plant
+            & Tree</button>
         </div>
       </div>
     </nav>
@@ -44,7 +46,8 @@
             greener for
             future
             generations.</p>
-          <button class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d] md:mt-5 mt-5 md:mb-5 mb-5">Get
+          <button
+            class="bg-[#facc15] px-5 py-3 rounded-full text-[#15803d] hover:bg-[#f9ca0b] hover:text-[#fff] duration-700 cursor-pointer md:mt-5 mt-5 md:mb-5 mb-5">Get
             Involved</button>
         </div>
       </div>
@@ -59,14 +62,16 @@
   <main>
     <section>
       <h1 class="flex justify-center items-center py-15 text-[2rem] font-bold">Choose Your Trees</h1>
-      <div class="w-11/12 mx-auto grid grid-cols-12 gap-3">
+      <div id="loading" class="text-center hidden">
+        <span class="loading loading-ring loading-xl scale-150 py-20"></span>
+      </div>
+      <div class="md:w-11/12 mx-auto grid md:grid-cols-12 grid-cols-1 gap-3 ">
         <aside class="catagory_item col-span-2 p-2">
           <h1 class="text-[1.25rem] font-bold p-2">Categories</h1>
-          <h2 class="bg-[#15803d] text-[#fff] p-2 rounded-md">All Categories</h2>
           <ul id="categoris_container" class="space-y-2 mt-5">
-
           </ul>
         </aside>
+
         <div class="bg-[#fff] col-span-8">
           <div id="card_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-3 space-y-6">
 
@@ -80,12 +85,76 @@
             </div>
             <div class="flex justify-between items-center mt-5">
               <h1 class="font-semibold">Total:</h1>
-              <p class="font-semibold">৳<span id="total_price">0</span></p>
+              <p class="font-semibold">৳<span id="total_price">0</span> </p>
             </div>
           </div>
         </aside>
       </div>
     </section>
+
+    <!-- modal -->
+
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="modal_container" class="space-y-3">
+
+        </div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+
+    <!-- about campaign section -->
+    <section>
+      <h1 class="flex justify-center items-center py-10 text-[2rem] font-bold">About the Campaign</h1>
+      <div class="max-w-[850px] mx-auto">
+        <div class="md:flex flex-row md:justify-between md:items-center gap-10">
+          <div class=" w-[50%]">
+            <img src="./assets/about.png" alt="">
+          </div>
+          <div class=" w-[50%] text-gray-500 md:mt-0 mt-10">
+            <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start,
+              we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create
+              habitats for wildlife, and combat global warming.</p>
+            <ul class="list-disc ml-5 mt-5 ">
+              <li class="">Restoration of natural habitats</li>
+              <li class="">Improvement of air quality</li>
+              <li class="">Support for local communities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- review section -->
+      <section class="bg-[#CFF0DC] py-10 mt-20">
+        <h1 class="text-center mb-10 font-bold">Our Impact</h1>
+        <div class="grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 md:px-0 px-10 ">
+          <div class="bg-[#fff] rounded-md py-5">
+            <h3 class="text-[2.50rem] text-[#15803d] font-bold text-center ">500k+</h3>
+            <p class="text-center">Trees Planted</p>
+          </div>
+          <div class="bg-[#fff] rounded-md py-5">
+            <h3 class="text-[2.50rem] text-[#15803d] font-bold text-center ">120+</h3>
+            <p class="text-center">Communities Involved</p>
+          </div>
+          <div class="bg-[#fff] rounded-md py-5">
+            <h3 class="text-[2.50rem] text-[#15803d] font-bold text-center ">30+</h3>
+            <p class="text-center">Countries Reached</p>
+          </div>
+        </div>
+      </section>
+
+
+
+    </section>
+
+
   </main>
 
 

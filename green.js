@@ -6,12 +6,14 @@ const cardContainer = document.getElementById('card_container')
 
 
 const loadCategoris = () => {
+  loading(true)
   fetch('https://openapi.programming-hero.com/api/categories')
     .then((res) => res.json())
     .then((data) => displayCategories(data.categories))
 }
 
 const displayCategories = (categories) => {
+
   categorisContainer.innerHTML = ''
   categories.forEach(catagory => {
     categorisContainer.innerHTML += `
@@ -38,12 +40,15 @@ const allCategory = (all) => {
 }
 
 const plantCategoris = (category) => {
+  loading(true)
   fetch(`https://openapi.programming-hero.com/api/category/${category}`)
     .then(res => res.json())
     .then(data => {
       showCard(data.plants);
     })
 }
+
+
 
 const showCard = (cata) => {
   cardContainer.innerHTML = '';
@@ -52,23 +57,55 @@ const showCard = (cata) => {
     divItem.innerHTML = `       
            <div class="space-y-4 ">
               <img src="${iteam.image}" alt="" class="rounded-md h-[250px] object-cover w-full bg-gray-200 p-2">
-              <h1 class="font-bold text-[1.25rem]">${iteam.name}</h1>
+              <h1 onclick="openModal(${iteam.id})" class="font-bold text-[1.25rem]">${iteam.name}</h1>
               <p>${iteam.description.slice(0, 90)}</p>
               <div class="flex justify-between">
                 <button class="bg-[#DCFCE7] px-5 py-2 rounded-full">Fruit Tree</button>
                 <button class="font-semibold ">৳<span>${iteam.price}</span></button>
               </div>
-              <button id="${iteam.id}" class="bg-[#15803d] w-full rounded-full px-5 py-2 text-[#fff] shadow-md "> Add To Cart </button>
+              <button id="${iteam.id}" class="bg-[#15803d] w-full rounded-full px-5 py-2 text-[#fff] hover:bg-[#fff] border-1 border-[#15803d] hover:text-[#15803d] duration-800 cursor-pointer "> Add To Cart </button>
             </div>     
     `
     cardContainer.appendChild(divItem)
-
   })
-
+  loading(false)
 }
 
-let addToCard = []
+const openModal = (id) => {
+  const modal = document.getElementById('modal_container')
+  modal.innerHTML = ''
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      modal.innerHTML += `
+      <h2>${data.plants.name}</h2>
+          <img src="${data.plants.image}" alt="" class="rounded-md h-[250px] object-cover w-full bg-gray-200 p-2">
+          <div>
+            <h2>Category</h2>
+            <p>${data.plants.category}</p>
+          </div>
+          <p><span>Price :</span>${data.plants.price}</p>
+          <p><span>Discription</span>${data.plants.description}</p>
+      `
+    }
+    )
+  document.getElementById('my_modal_5').showModal()
+}
 
+// spinar
+const loading = (status) => {
+  if (status) {
+    document.getElementById('loading').classList.remove('hidden')
+    document.getElementById('card_container').classList.add('hidden')
+  } else {
+    document.getElementById('loading').classList.add('hidden')
+    document.getElementById('card_container').classList.remove('hidden')
+  }
+}
+
+
+let addToCard = []
 document.getElementById('card_container').addEventListener('click', (e) => {
   if (e.target.tagName == 'BUTTON') {
     const name = e.target.parentNode.children[1].innerText
@@ -95,7 +132,7 @@ const showCart = (crtArr) => {
          <div class="bg-[#DCFCE7] p-2 rounded-md mt-5">
               <h1 class="font-semibold">${iteam.name}</h1>
               <div class="flex justify-between text-gray-500">                
-                <p>$<span id="card_price">${iteam.price}</span></p>
+                <p>$<span id="card_price">${iteam.price}</span> x 1</p>
                 <button onclick='deletCart(${iteam.id})'><i class="fa-solid fa-xmark"></i></button>
               </div>
           </div>
