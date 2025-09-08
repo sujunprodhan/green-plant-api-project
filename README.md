@@ -19,6 +19,7 @@ New features came out with ES2015 (ES6). ES6 added `let`, `var`, and `const`, wh
 
 **Example:**
 ```js
+```
 var x = 10;
 var x = 20; // allowed
 console.log(x); // 20
@@ -32,7 +33,7 @@ const z = 50;
 // z = 60; ❌ not allowed
 console.log(z); // 50
 ```
-
+```
 ## 2. What is the difference between `map()`, `forEach()`, and `filter()`?
 
 **Answer:**  
